@@ -1,11 +1,17 @@
 import Game from "./bowlingKata.js";
 
 describe("bowlingKata", () => {
+    let g; 
+
+  beforeEach(() => {
+    g = new Game();
+  });
+  
   it("Debe crearse la clase juego pero vacía ", () => {
     const myGame = new Game();
     expect(myGame).toBeDefined();
   });
-  const g = new Game();
+
  
 
   function rollMany(n,pins){
@@ -27,7 +33,7 @@ describe("bowlingKata", () => {
     rollMany(20,1)
     expect(g.score()).toEqual(20);
   });
-  
+
   /*
   it("En el primer tiro se saca 5, en el segundo tambien haciendo un spare, en el tercero se saca 3 y en el resto de los 20 tiros cero, haciendo que se deba obtener una puntuacion de 16", () => {
   g.roll(5)
