@@ -6,7 +6,7 @@ describe("bowlingKata", () => {
   beforeEach(() => {
     g = new Game();
   });
-  
+
   it("Debe crearse la clase juego pero vacía ", () => {
     const myGame = new Game();
     expect(myGame).toBeDefined();
@@ -34,7 +34,7 @@ describe("bowlingKata", () => {
     expect(g.score()).toEqual(20);
   });
 
-  /*
+  
   it("En el primer tiro se saca 5, en el segundo tambien haciendo un spare, en el tercero se saca 3 y en el resto de los 20 tiros cero, haciendo que se deba obtener una puntuacion de 16", () => {
   g.roll(5)
   g.roll(5) //spare
@@ -42,6 +42,5 @@ describe("bowlingKata", () => {
   rollMany(17,0)
   expect(g.score()).toEqual(16);
   });
-  */
 
 });
