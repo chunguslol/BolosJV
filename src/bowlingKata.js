@@ -11,7 +11,7 @@ class Game {
         let i=0
         for (let frame=0; frame< 10;frame++)
         {
-            if (this._rolls[i]+this._rolls[i+1]==10)//spare
+            if (this.isSpare(i))//spare
             {
               score=score+10+this._rolls[i+2]
               i=i+2
@@ -24,5 +24,9 @@ class Game {
         }
         return score
     }
+
+    isSpare(i){
+        return this._rolls[i]+this._rolls[i+1]==10
+      }
   }
   export default Game;

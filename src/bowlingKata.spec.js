@@ -36,11 +36,15 @@ describe("bowlingKata", () => {
 
   
   it("En el primer tiro se saca 5, en el segundo tambien haciendo un spare, en el tercero se saca 3 y en el resto de los 20 tiros cero, haciendo que se deba obtener una puntuacion de 16", () => {
-  g.roll(5)
-  g.roll(5) //spare
+  rollSpare();
   g.roll(3)
   rollMany(17,0)
   expect(g.score()).toEqual(16);
   });
+  
+  function rollSpare(){
+    g.roll(5)
+    g.roll(5)
+  }
 
 });
