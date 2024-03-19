@@ -12,7 +12,7 @@ class Game {
     let i=0
     for (let frame=0; frame< 10;frame++)
     {
-      if (this._rolls[i]==10) 
+      if (this.isStrike(i)) 
       {
         score=score+10+this.strikeBonus(i)
         i++
@@ -24,7 +24,7 @@ class Game {
       }
       else
       {
-        score=score+this.summOfBallsInFrame(i)
+        score=score+this.sumOfBallsInFrame(i)
         i=i+2
       }
       
@@ -35,6 +35,9 @@ class Game {
   isSpare(i){
     return this._rolls[i]+this._rolls[i+1]==10
   }
+  isStrike(i){
+    return this._rolls[i]==10
+  }
   spareBonus(i)
   {
     return this._rolls[i+2]
@@ -43,7 +46,7 @@ class Game {
   {
     return this._rolls[i+1]+this._rolls[i+2]
   }
-  summOfBallsInFrame(i)
+  sumOfBallsInFrame(i)
   {
     return this._rolls[i]+this._rolls[i+1]
   }
